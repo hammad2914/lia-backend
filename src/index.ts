@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.routes';
+import hsRoutes from './routes/hs.routes';
 import { errorHandler } from './middleware/error.middleware';
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/hs', hsRoutes);
 
 app.use(errorHandler);
 
